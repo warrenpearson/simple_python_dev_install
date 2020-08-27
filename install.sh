@@ -79,10 +79,25 @@ do
 done
 echo ""
 
-exit
-echo "Downloading flyway"
- wget https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/5.2.4/flyway-commandline-5.2.4-macosx-x64.tar.gz
+echo "Checking flyway"
+if [ -f "/opt/flyway" ]; then
+        echo "flyway is installed"
+else
+    echo "Installing flyway"
+    here=$PWD
+    wget https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/5.2.4/flyway-commandline-5.2.4-macosx-x64.tar.gz
+
+    sudo mkdir -p /opt
+    sudo chown -R ${USER} /opt
+    mv flyway-commandline-5.2.4-macosx-x64.tar.gz /opt
+    cd /opt
+    gunzip flyway-commandline-5.2.4-macosx-x64.tar.gz
+    tar xvf flyway-commandline-5.2.4-macosx-x64.tar
+    ln -s flyway-5.2.4/flyway
+    cd ${here}
+fi
 echo ""
+
 echo "Downloading docker"
  wget https://download.docker.com/mac/stable/Docker.dmg
 echo ""
