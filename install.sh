@@ -50,6 +50,19 @@ else
 fi
 echo ""
 
+echo "Checking openjdk11"
+echo ""
+
+if [ -d "/usr/local/Caskroom/adoptopenjdk11" ]; then
+    echo "openjdk is installed"
+else
+    echo "Installing openjdk11"
+    brew tap adoptopenjdk/openjdk
+    brew cask install adoptopenjdk11
+fi
+echo ""
+
+
 echo "Checking brew packages"
 
 for brew_package in `more brew_packages.txt`
@@ -66,6 +79,7 @@ do
 done
 echo ""
 
+exit
 echo "Downloading flyway"
  wget https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/5.2.4/flyway-commandline-5.2.4-macosx-x64.tar.gz
 echo ""
