@@ -95,12 +95,31 @@ else
     tar xvf flyway-commandline-5.2.4-macosx-x64.tar
     ln -s flyway-5.2.4/flyway
     cd ${here}
+    echo "You can add flyway to your path by setting PATH=$PATH:/opt"
 fi
 echo ""
 
 echo "Downloading docker"
  wget https://download.docker.com/mac/stable/Docker.dmg
 echo ""
+
+for i in 'tox===3.14.5' 'PyYAML==5.3.1' 'jinja2-cli==0.7.0'
+do
+    pip3 install $i
+done
+
+echo "You will need to add the following to your .bashrc"
+echo "export PATH=$PATH:/opt:$HOME/Library/Python/3.7/bin"
+
+brew install unixodbc
+brew install mysql-client
+
+echo "export PATH=$PATH:/usr/local/opt/mysql-client/bin"
+
+
+# brew tap microsoft/mssql-release https://github.com/Microsoft/homebrew-mssql-release
+# brew update
+# HOMEBREW_NO_ENV_FILTERING=1 ACCEPT_EULA=Y brew install msodbcsql17 mssql-tools
 
 # Handle brew install errors:
 # git clone https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
