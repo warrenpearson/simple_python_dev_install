@@ -120,7 +120,7 @@ echo "export PATH=$PATH:/usr/local/opt/mysql-client@5.7/bin"
 
 
 # To install MS SQL Server
-# brew install unixodbc
-# brew tap microsoft/mssql-release https://github.com/Microsoft/homebrew-mssql-release
-# brew update
-# HOMEBREW_NO_ENV_FILTERING=1 ACCEPT_EULA=Y brew install msodbcsql17 mssql-tools
+brew install unixodbc
+brew tap microsoft/mssql-release https://github.com/Microsoft/homebrew-mssql-release
+brew update
+HOMEBREW_NO_ENV_FILTERING=1 ACCEPT_EULA=Y brew install msodbcsql17 mssql-tools
