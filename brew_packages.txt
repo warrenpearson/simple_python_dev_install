@@ -1,6 +1,0 @@
-ack:/usr/local/bin/ack
-bash:/usr/local/bin/bash
-coreutils:/usr/local/bin/realpath
-jq:/usr/local/bin/jq
-node:/usr/local/bin/node
-wget:/usr/local/bin/wget
