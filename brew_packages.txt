@@ -2,5 +2,6 @@ ack:/usr/local/bin/ack
 bash:/usr/local/bin/bash
 coreutils:/usr/local/bin/realpath
 jq:/usr/local/bin/jq
+mysql:/usr/local/opt/mysql-client@5.7/bin//mysql
 node:/usr/local/bin/node
 wget:/usr/local/bin/wget
